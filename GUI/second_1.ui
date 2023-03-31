@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1012</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QFrame" name="verticalFrame">
+     <property name="minimumSize">
+      <size>
+       <width>800</width>
+       <height>500</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>800</width>
+       <height>500</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame#verticalFrame{
+	image: url(res/img.png);
+	border-radius: 15;
+	border: 0px solid rgb(255, 255, 255);
+}
+QPushButton#pushButton {
+    min-width: 0px;
+    border: 0px solid rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0);
+	color: rgb(0, 0, 0);
+}
+QPushButton#pushButton_2 {
+    min-width: 20px;
+    border: 0px solid rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0);
+	color: rgb(255, 255, 255);
+}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe MDL2 Assets</family>
+            <pointsize>30</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>🠔</string>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>2</width>
+            <height>2</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignRight">
+         <widget class="QPushButton" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe MDL2 Assets</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string></string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableWidget">
+        <column>
+         <property name="text">
+          <string>Номер</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Команда</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Всего игр</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Всего В</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Всего Н</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>New П</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Д В</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Д Н</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Д П</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Г В</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Г Н</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Г П</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
