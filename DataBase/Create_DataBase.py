@@ -84,31 +84,28 @@ class News_DataBase(Base):
 
 Base.metadata.create_all(bind=engine)
 
-
-def stanf():
-    with Session(autoflush=False, bind=engine) as db:
-
-        if __name__ == '__main__':
-            loop = asyncio.get_event_loop()
-            loop.run_until_complete(Model.Parsing.team_pars())
-        for i in range(len(Model.Parsing.teams)):
-            ty.append(TeamDataBase())
-        db.execute(text("DELETE FROM Standings"))
-        for a in range(len(Model.Parsing.teams)):
-            ty[a].number = Model.Parsing.teams[a].number
-            ty[a].name = Model.Parsing.teams[a].name
-            ty[a].game_all = Model.Parsing.teams[a].game_all
-            ty[a].win_all = Model.Parsing.teams[a].win_all
-            ty[a].draw_all = Model.Parsing.teams[a].draw_all
-            ty[a].defeat_all = Model.Parsing.teams[a].defeat_all
-            ty[a].win_home = Model.Parsing.teams[a].win_home
-            ty[a].draw_home = Model.Parsing.teams[a].draw_home
-            ty[a].defeat_home = Model.Parsing.teams[a].defeat_home
-            ty[a].win_visit = Model.Parsing.teams[a].win_visit
-            ty[a].draw_visit = Model.Parsing.teams[a].draw_visit
-            ty[a].defeat_visit = Model.Parsing.teams[a].defeat_visit
-            db.add(ty[a])
-            db.commit()
+with Session(autoflush=False, bind=engine) as db:
+    if __name__ == '__main__':
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(Model.Parsing.team_pars())
+    for i in range(len(Model.Parsing.teams)):
+        ty.append(TeamDataBase())
+    db.execute(text("DELETE FROM Standings"))
+    for a in range(len(Model.Parsing.teams)):
+        ty[a].number = Model.Parsing.teams[a].number
+        ty[a].name = Model.Parsing.teams[a].name
+        ty[a].game_all = Model.Parsing.teams[a].game_all
+        ty[a].win_all = Model.Parsing.teams[a].win_all
+        ty[a].draw_all = Model.Parsing.teams[a].draw_all
+        ty[a].defeat_all = Model.Parsing.teams[a].defeat_all
+        ty[a].win_home = Model.Parsing.teams[a].win_home
+        ty[a].draw_home = Model.Parsing.teams[a].draw_home
+        ty[a].defeat_home = Model.Parsing.teams[a].defeat_home
+        ty[a].win_visit = Model.Parsing.teams[a].win_visit
+        ty[a].draw_visit = Model.Parsing.teams[a].draw_visit
+        ty[a].defeat_visit = Model.Parsing.teams[a].defeat_visit
+        db.add(ty[a])
+        db.commit()
 
 
 with Session(autoflush=False, bind=engine) as db1:
