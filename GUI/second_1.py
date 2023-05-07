@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1014, 512)
+        Form.resize(1014, 513)
         Form.setStyleSheet("")
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -35,6 +35,9 @@ class Ui_Form(object):
 "    border: 0px solid rgb(255, 255, 255);\n"
 "    background-color: rgba(255, 255, 255, 0);\n"
 "    color: rgb(255, 255, 255);\n"
+"}\n"
+"QTableWidget#tableWidget {\n"
+"    background-color: rgba(255, 255, 255, 180)\n"
 "}")
         self.verticalFrame.setObjectName("verticalFrame")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalFrame)
@@ -64,8 +67,10 @@ class Ui_Form(object):
         self.horizontalLayout_3.addWidget(self.pushButton, 0, QtCore.Qt.AlignmentFlag.AlignRight)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
         self.tableWidget = QtWidgets.QTableWidget(parent=self.verticalFrame)
-        self.tableWidget.setMinimumSize(QtCore.QSize(780, 460))
-        self.tableWidget.setMaximumSize(QtCore.QSize(780, 460))
+        self.tableWidget.setMinimumSize(QtCore.QSize(780, 430))
+        self.tableWidget.setMaximumSize(QtCore.QSize(780, 430))
+        self.tableWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
+        self.tableWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)

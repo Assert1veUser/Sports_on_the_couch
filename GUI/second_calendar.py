@@ -12,12 +12,74 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(1014, 512)
-        Form.setStyleSheet("QFrame#verticalFrame{\n"
+        Form.setEnabled(True)
+        Form.resize(1014, 514)
+        Form.setStyleSheet("")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.frame = QtWidgets.QFrame(parent=Form)
+        self.frame.setMinimumSize(QtCore.QSize(800, 500))
+        self.frame.setMaximumSize(QtCore.QSize(800, 500))
+        self.frame.setStyleSheet("QFrame#frame{\n"
 "    image: url(res/img.png);\n"
 "    border-radius: 15;\n"
 "    border: 0px solid rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton#pushButton_4 {\n"
+"    min-width: 0px;\n"
+"    border: 0px solid rgb(255, 255, 255);\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton#pushButton_3 {\n"
+"    min-width: 20px;\n"
+"    border: 0px solid rgb(255, 255, 255);\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(255, 255, 255);\n"
+"}\n"
+"QTableWidget#tableWidget {\n"
+"    background-color: rgba(255, 255, 255, 180)\n"
 "}")
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.pushButton_3 = QtWidgets.QPushButton(parent=self.frame)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(20, 20))
+        self.pushButton_3.setMaximumSize(QtCore.QSize(40, 20))
+        font = QtGui.QFont()
+        font.setFamily("Segoe MDL2 Assets")
+        font.setPointSize(30)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setIconSize(QtCore.QSize(2, 2))
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_3.addWidget(self.pushButton_3)
+        self.pushButton_4 = QtWidgets.QPushButton(parent=self.frame)
+        self.pushButton_4.setMinimumSize(QtCore.QSize(0, 20))
+        self.pushButton_4.setMaximumSize(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Segoe MDL2 Assets")
+        font.setPointSize(14)
+        self.pushButton_4.setFont(font)
+        self.pushButton_4.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.horizontalLayout_3.addWidget(self.pushButton_4, 0, QtCore.Qt.AlignmentFlag.AlignRight)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.frame)
+        self.tableWidget.setMinimumSize(QtCore.QSize(730, 300))
+        self.tableWidget.setMaximumSize(QtCore.QSize(730, 300))
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.verticalLayout.addWidget(self.tableWidget, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout.addItem(spacerItem)
+        self.horizontalLayout.addWidget(self.frame)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -25,3 +87,5 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushButton_3.setText(_translate("Form", "🠔"))
+        self.pushButton_4.setText(_translate("Form", ""))
