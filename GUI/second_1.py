@@ -12,14 +12,65 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(606, 419)
+        Form.resize(1014, 512)
+        Form.setStyleSheet("")
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.tableWidget = QtWidgets.QTableWidget(parent=Form)
+        self.verticalFrame = QtWidgets.QFrame(parent=Form)
+        self.verticalFrame.setMinimumSize(QtCore.QSize(800, 500))
+        self.verticalFrame.setMaximumSize(QtCore.QSize(800, 500))
+        self.verticalFrame.setStyleSheet("QFrame#verticalFrame{\n"
+"    image: url(res/img.png);\n"
+"    border-radius: 15;\n"
+"    border: 0px solid rgb(255, 255, 255);\n"
+"}\n"
+"QPushButton#pushButton {\n"
+"    min-width: 0px;\n"
+"    border: 0px solid rgb(255, 255, 255);\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(0, 0, 0);\n"
+"}\n"
+"QPushButton#pushButton_2 {\n"
+"    min-width: 20px;\n"
+"    border: 0px solid rgb(255, 255, 255);\n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(255, 255, 255);\n"
+"}")
+        self.verticalFrame.setObjectName("verticalFrame")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalFrame)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_3.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.pushButton_2 = QtWidgets.QPushButton(parent=self.verticalFrame)
+        self.pushButton_2.setMinimumSize(QtCore.QSize(20, 20))
+        self.pushButton_2.setMaximumSize(QtCore.QSize(40, 20))
+        font = QtGui.QFont()
+        font.setFamily("Segoe MDL2 Assets")
+        font.setPointSize(30)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setIconSize(QtCore.QSize(2, 2))
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.horizontalLayout_3.addWidget(self.pushButton_2)
+        self.pushButton = QtWidgets.QPushButton(parent=self.verticalFrame)
+        self.pushButton.setMinimumSize(QtCore.QSize(0, 20))
+        self.pushButton.setMaximumSize(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Segoe MDL2 Assets")
+        font.setPointSize(14)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout_3.addWidget(self.pushButton, 0, QtCore.Qt.AlignmentFlag.AlignRight)
+        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.verticalFrame)
+        self.tableWidget.setMinimumSize(QtCore.QSize(780, 460))
+        self.tableWidget.setMaximumSize(QtCore.QSize(780, 460))
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
-        self.horizontalLayout.addWidget(self.tableWidget)
+        self.verticalLayout.addWidget(self.tableWidget)
+        self.horizontalLayout.addWidget(self.verticalFrame)
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -27,3 +78,5 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+        self.pushButton_2.setText(_translate("Form", "🠔"))
+        self.pushButton.setText(_translate("Form", ""))

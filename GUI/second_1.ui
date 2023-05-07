@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1012</width>
-    <height>512</height>
+    <width>1014</width>
+    <height>513</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,6 +48,9 @@ QPushButton#pushButton_2 {
     border: 0px solid rgb(255, 255, 255);
 	background-color: rgba(255, 255, 255, 0);
 	color: rgb(255, 255, 255);
+}
+QTableWidget#tableWidget {
+	background-color: rgba(255, 255, 255, 180)
 }</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -119,66 +122,24 @@ QPushButton#pushButton_2 {
       </item>
       <item>
        <widget class="QTableWidget" name="tableWidget">
-        <column>
-         <property name="text">
-          <string>Номер</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Команда</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Всего игр</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Всего В</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Всего Н</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>New П</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Д В</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Д Н</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Д П</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Г В</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Г Н</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Г П</string>
-         </property>
-        </column>
+        <property name="minimumSize">
+         <size>
+          <width>780</width>
+          <height>430</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>780</width>
+          <height>430</height>
+         </size>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
        </widget>
       </item>
      </layout>
