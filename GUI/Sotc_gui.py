@@ -1,18 +1,12 @@
-from PyQt6 import QtWidgets, QtGui
-from PyQt6.uic.properties import QtCore
 from qtpy import uic
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QTableWidgetItem, QTextEdit, QLineEdit
-
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QTableWidgetItem
 import DataBase.Create_DataBase
-import GUI.second_1
-from GUI.second_1 import Ui_Form
 
 
 class Widget(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowIcon(QtGui.QIcon('res/label.png'))
         self.setLayout(QVBoxLayout())
         self.add_w1()
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
@@ -98,7 +92,6 @@ class Widget(QWidget):
     def click_news(self):
         self.del_w(self.layout().itemAt(0).widget())
         self.add_w6()
-
 
     def click_team1(self):
         self.del_w(self.layout().itemAt(0).widget())
@@ -498,10 +491,6 @@ class Widget_news(QWidget):
 
         text60 = self.textBrowser_60
         text60.setText(DataBase.Create_DataBase.newsMain_text[19])
-
-
-
-
 
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)

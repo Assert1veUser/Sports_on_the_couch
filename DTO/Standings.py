@@ -1,5 +1,4 @@
 class Team:
-
     def __init__(self, number, name, game_all, win_all, draw_all, defeat_all, win_home, draw_home, defeat_home,
                  win_visit, draw_visit, defeat_visit):
         self.number = number
@@ -17,7 +16,6 @@ class Team:
 
 
 class Calendar:
-
     def __init__(self, name, score, date, stadium, win_first, draw, win_second):
         self.name = name
         self.score = score

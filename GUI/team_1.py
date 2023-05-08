@@ -20,36 +20,36 @@ class Ui_Form(object):
         self.frame_2.setMinimumSize(QtCore.QSize(800, 500))
         self.frame_2.setMaximumSize(QtCore.QSize(800, 500))
         self.frame_2.setStyleSheet("QFrame#frame_2{\n"
-"    image: url(res/img.png);\n"
-"    border-radius: 15;\n"
-"    border: 0px solid rgb(255, 255, 255);\n"
-"}\n"
-"QPushButton {\n"
-"    border: 3px solid rgb(255, 255, 255);\n"
-"    border-radius: 6px;\n"
-"    background-color:rgba(0, 0, 0, 70);\n"
-"    min-width: 80px;\n"
-"    color: rgb(255, 255, 255);\n"
-"    font-style: bold;\n"
-"}\n"
-"\n"
-"QPushButton#pushButton_18 {\n"
-"    min-width: 0px;\n"
-"    border: 0px solid rgb(255, 255, 255);\n"
-"    background-color: rgba(255, 255, 255, 0);\n"
-"    color: rgb(0, 0, 0);\n"
-"}\n"
-"QPushButton#pushButton_19 {\n"
-"    min-width: 20px;\n"
-"    border: 0px solid rgb(255, 255, 255);\n"
-"    background-color: rgba(255, 255, 255, 0);\n"
-"    color: rgb(255, 255, 255);\n"
-"}\n"
-"QTableWidget#tableWidget {\n"
-"    background-color: rgba(255, 255, 255, 180)\n"
-"}\n"
-"\n"
-"")
+                                   "    image: url(res/img.png);\n"
+                                   "    border-radius: 15;\n"
+                                   "    border: 0px solid rgb(255, 255, 255);\n"
+                                   "}\n"
+                                   "QPushButton {\n"
+                                   "    border: 3px solid rgb(255, 255, 255);\n"
+                                   "    border-radius: 6px;\n"
+                                   "    background-color:rgba(0, 0, 0, 70);\n"
+                                   "    min-width: 80px;\n"
+                                   "    color: rgb(255, 255, 255);\n"
+                                   "    font-style: bold;\n"
+                                   "}\n"
+                                   "\n"
+                                   "QPushButton#pushButton_18 {\n"
+                                   "    min-width: 0px;\n"
+                                   "    border: 0px solid rgb(255, 255, 255);\n"
+                                   "    background-color: rgba(255, 255, 255, 0);\n"
+                                   "    color: rgb(0, 0, 0);\n"
+                                   "}\n"
+                                   "QPushButton#pushButton_19 {\n"
+                                   "    min-width: 20px;\n"
+                                   "    border: 0px solid rgb(255, 255, 255);\n"
+                                   "    background-color: rgba(255, 255, 255, 0);\n"
+                                   "    color: rgb(255, 255, 255);\n"
+                                   "}\n"
+                                   "QTableWidget#tableWidget {\n"
+                                   "    background-color: rgba(255, 255, 255, 180)\n"
+                                   "}\n"
+                                   "\n"
+                                   "")
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
@@ -87,7 +87,8 @@ class Ui_Form(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.verticalLayout.addWidget(self.tableWidget, 0, QtCore.Qt.AlignmentFlag.AlignHCenter)
-        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum,
+                                           QtWidgets.QSizePolicy.Policy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.horizontalLayout_2.addWidget(self.frame_2)
 

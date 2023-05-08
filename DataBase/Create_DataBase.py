@@ -1,5 +1,3 @@
-import asyncio
-
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase
@@ -158,7 +156,7 @@ with Session(autoflush=False, bind=engine) as db1:
         td[s].win_second = Model.Pars.calendar[s].win_second
         db1.add(td[s])
         db1.commit()
-#
+
 with Session(autoflush=False, bind=engine) as db2:
     Model.Pars.team_info_pars()
     for i in range(len(Model.Pars.team_info)):
@@ -181,8 +179,6 @@ with Session(autoflush=False, bind=engine) as db2:
         db2.add(tg[k])
         db2.commit()
 
-
-
 with Session(autoflush=False, bind=engine) as db3:
     Model.Pars.news_pars()
     for i in range(len(Model.Pars.news)):
@@ -197,14 +193,6 @@ with Session(autoflush=False, bind=engine) as db3:
 
 
 def Select_calendar():
-    select_calendarName = ()
-    select_calendarScore = ()
-    select_calendarDate = ()
-    select_calendarStadium = ()
-    select_calendarWin_first = ()
-    select_calendarDraw = ()
-    select_calendarWin_second = ()
-
     select_calendarName = Session(autoflush=False, bind=engine).query(Calendar_DataBase.name).all()
     select_calendarScore = Session(autoflush=False, bind=engine).query(Calendar_DataBase.score).all()
     select_calendarDate = Session(autoflush=False, bind=engine).query(Calendar_DataBase.date).all()
@@ -232,18 +220,6 @@ def Select_calendar():
 
 
 def Select_standings():
-    select_standingsName = ()
-    select_standingsWA = ()
-    select_standingsWV = ()
-    select_standingsWH = ()
-    select_standingsGA = ()
-    select_standingsDA = ()
-    select_standingsDH = ()
-    select_standingsDV = ()
-    select_standingsDeA = ()
-    select_standingsDeH = ()
-    select_standingsDeV = ()
-
     select_standingsName = Session(autoflush=False, bind=engine).query(TeamDataBase.name).all()
     select_standingsWA = Session(autoflush=False, bind=engine).query(TeamDataBase.win_all).all()
     select_standingsWV = Session(autoflush=False, bind=engine).query(TeamDataBase.win_visit).all()
@@ -283,20 +259,6 @@ def Select_standings():
 
 
 def Select_teams():
-    select_teamsName = ()
-    select_teamsCity = ()
-    select_teamsYear_foundation = ()
-    select_teamsStadium = ()
-    select_teamsHead_coach = ()
-    select_teamsSeasons_league = ()
-    select_teamsGames_league = ()
-    select_teamsWins = ()
-    select_teamsDraws = ()
-    select_teamsDefeats = ()
-    select_teamsGoals_scored = ()
-    select_teamsMissed_scored = ()
-    select_teamsDry_matches = ()
-
     select_teamsName = Session(autoflush=False, bind=engine).query(Team_info_DataBase.name).all()
     select_teamsCity = Session(autoflush=False, bind=engine).query(Team_info_DataBase.city).all()
     select_teamsYear_foundation = Session(autoflush=False, bind=engine).query(Team_info_DataBase.year_foundation).all()
@@ -340,11 +302,8 @@ def Select_teams():
         teamsMissed_scored.append(str(select_teamsMissed_scored[i][0]))
         teamsDry_matches.append(str(select_teamsDry_matches[i][0]))
 
-def Select_news():
-    select_newsInfo = ()
-    select_newsMain_text = ()
-    select_newsDate = ()
 
+def Select_news():
     select_newsInfo = Session(autoflush=False, bind=engine).query(News_DataBase.title).all()
     select_newsMain_text = Session(autoflush=False, bind=engine).query(News_DataBase.main_text).all()
     select_newsDate = Session(autoflush=False, bind=engine).query(News_DataBase.date).all()

@@ -93,27 +93,27 @@ def calendar_pars():
             win_first_all_calendar.insert(0, "-")
             draws_calendar.insert(0, "-")
             win_second_all_calendar.insert(0, "-")
-    for l in range(len(win_first_all_calendar)):
+    for s in range(len(win_first_all_calendar)):
         calendar.append(Calendar(
-            names_calendar[l],
-            scores_calendar[l],
-            dates_calendar[l],
-            stadiums_calendar[l],
-            win_first_all_calendar[l],
-            draws_calendar[l],
-            win_second_all_calendar[l]))
+            names_calendar[s],
+            scores_calendar[s],
+            dates_calendar[s],
+            stadiums_calendar[s],
+            win_first_all_calendar[s],
+            draws_calendar[s],
+            win_second_all_calendar[s]))
 
 
 def team_info_pars():
     response_teamInfo = requests.get(BASE_URL_premierliga)
-    soup_teamInfo = BeautifulSoup(response_teamInfo.text, 'lxml')
+    soup_teamInfo = BeautifulSoup(response_teamInfo.text, "lxml")
     items_team_info = soup_teamInfo.find_all("div", {"class": "rpl-clubs"})
     for item in items_team_info:
-        for link in item.findAll('a'):
-            links.append(link.get('href'))
+        for link in item.findAll("a"):
+            links.append(link.get("href"))
     for w in range(len(links)):
         response_teamInfo_2 = requests.get("https://premierliga.ru" + links[w])
-        soup_teamInfo_2 = BeautifulSoup(response_teamInfo_2.text, 'lxml')
+        soup_teamInfo_2 = BeautifulSoup(response_teamInfo_2.text, "lxml")
         items_team_info_2 = soup_teamInfo_2.find_all("div", {"class": "main-info"})
         for item in items_team_info_2:
             main_team_info = item.find_all("b")
@@ -146,9 +146,10 @@ def team_info_pars():
             result_stat_info[f][7],
         ))
 
+
 def news_pars():
     response_news = requests.get(BASE_URL_news)
-    soup_news = BeautifulSoup(response_news.text, 'lxml')
+    soup_news = BeautifulSoup(response_news.text, "lxml")
     items_news = soup_news.find_all("div", {"class": "news-wrap"})
     for item in items_news:
         date.append(item.find("span", {"class": "date"}).text)
@@ -165,14 +166,14 @@ def news_pars():
         for k in range(len(title_all)):
             title.append(title_all[k].text)
         main_text_all = item.find_all("p")
-    for l in range(len(main_text_all)):
-        main_text.append(main_text_all[l].text)
+    for d in range(len(main_text_all)):
+        main_text.append(main_text_all[d].text)
     for j in range(1, len(main_text)):
         if j % 2 != 0:
             main_text_clear.append(main_text[j])
-    for l in range(len(date)):
+    for k in range(len(date)):
         news.append(News(
-            title[l],
-            main_text_clear[l],
-            date[l]
+            title[k],
+            main_text_clear[k],
+            date[k]
         ))
